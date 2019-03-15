@@ -20,6 +20,13 @@
         <constructor-arg ref="myFortuneService"></constructor-arg>         
     </bean>
     
+    <bean id="myCricketCoach"
+    	class="solutions.x3m.springdemoone.CricketCoach">
+
+		<!-- Setter injection (will look for setFortuneService by default -->
+		<property name="fortuneService" ref="myFortuneService" />	
+   	</bean>
+    
     <bean id="myLoggerConfig" class="solutions.x3m.springdemoone.MyLoggerConfig" init-method="initLogger">
     	<property name="rootLoggerLevel" value="FINE" />
     	<property name="printedLoggerLevel" value="FINE"/>

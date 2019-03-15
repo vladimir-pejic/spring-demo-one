@@ -9,8 +9,15 @@
 
 	
     <!-- Define your beans here -->
+    <bean id="myFortuneService"
+        class="solutions.x3m.springdemoone.HappyFortuneService">         
+    </bean>
+    
     <bean id="myCoach"
-        class="solutions.x3m.springdemoone.BaseballCoach">         
+        class="solutions.x3m.springdemoone.TrackCoach">
+        
+        <!-- inject the fortune bean into Coach class constructor -->
+        <constructor-arg ref="myFortuneService"></constructor-arg>         
     </bean>
     
     <bean id="myLoggerConfig" class="solutions.x3m.springdemoone.MyLoggerConfig" init-method="initLogger">
